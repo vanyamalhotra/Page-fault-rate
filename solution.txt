@@ -1,0 +1,15 @@
+For the calculation of the page-fault rate that is acceptable according to the ques:
+o	If P is the page-fault rate then P is the probability that a memory access causes a page fault
+o	If there is no page-fault then the memory access time is 100 nano-seconds
+o	Also (1-P) =Q(let) is the probability that the memory access doesn't cause a page-fault
+o	Therefore (1-P) is the probability that a memory access costs 100 nano secs
+o	The probability that a page fault costs 20 milli-seconds is 0.7*P
+o	The probability that a page fault costs 8 milli-seconds is (1-0.7=)0.3*P
+o	Since 1 nsec = 10^6 msec and access time should not be more than 200 nano-seconds:
+o	[(1-P) *100] + [ 0.7*P*20000000] + [0.3*P*8000000] = 200
+o	(14000000 + 2400000 - 100) P = 100
+o	P = 100/ (16400100) 
+o	P = 6.1 * 10^-6 
+o	P = .0000061
+o	P = .00061%
+This solution uses basic mathematical rules and OS concepts of paging to determine the acceptable value of P i.e. page fault rate
